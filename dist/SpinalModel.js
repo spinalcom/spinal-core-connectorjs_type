@@ -23,9 +23,9 @@
  * <http://resources.spinalcom.com/licenses.pdf>.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+require("./connectorTS");
 const spinalCore = require("spinal-core-connectorjs");
 exports.spinalCore = spinalCore;
-require("./connectorTS");
 /// <reference types="typescript" />
 /* tslint:disable:variable-name  class-name */
 const Model = spinalCore._def.Model;
