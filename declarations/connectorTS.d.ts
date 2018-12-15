@@ -43,10 +43,10 @@ declare module 'spinal-core-connectorjs' {
         /**
          * register models, required when ussing modules require/import
          * @static
-         * @param {(spinal.Model|spinal.Model[])} modelList
+         * @param {(typeof spinal.Model|typeof spinal.Model[])} modelList
          * @memberof spinalCore
          */
-        static register_models(modelList: spinal.Model | spinal.Model[]): void;
+        static register_models(modelList: typeof spinal.Model | typeof spinal.Model[]): void;
         /**
          * loads a model from the file system
          * @static
