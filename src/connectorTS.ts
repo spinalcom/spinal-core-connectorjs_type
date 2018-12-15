@@ -497,7 +497,6 @@ declare namespace spinal {
     constructor(
         m: Model, onchange_construction: boolean, f: SpinalOnChangeBindModel);
   }
-  class ForgeFileItem extends Model {}
   /**
    * handle the connection between the SpinalHub and the Organ
    * @class FileSystem

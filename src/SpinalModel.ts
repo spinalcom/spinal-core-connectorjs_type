@@ -22,30 +22,34 @@
  * <http://resources.spinalcom.com/licenses.pdf>.
  */
 
-import * as spinalCore from 'spinal-core-connectorjs';
 import './connectorTS';
+
+import * as spinalCore from 'spinal-core-connectorjs';
 /// <reference types="typescript" />
 
 /* tslint:disable:variable-name  class-name */
-const Model : typeof spinal.Model = spinalCore._def.Model;
-const Str :typeof  spinal.Str = spinalCore._def.Str;
-const Bool :typeof  spinal.Bool = spinalCore._def.Bool;
-const Val :typeof  spinal.Val = spinalCore._def.Val;
-const Lst :typeof  spinal.Lst = spinalCore._def.Lst;
-const Directory :typeof  spinal.Directory = spinalCore._def.Directory;
-const Vec :typeof  spinal.Vec = spinalCore._def.Vec;
-const Path :typeof  spinal.Path = spinalCore._def.Path;
-const File :typeof  spinal.File = spinalCore._def.File;
-const Ptr :typeof  spinal.Ptr = spinalCore._def.Ptr;
-const Choice :typeof  spinal.Choice = spinalCore._def.Choice;
-const TypedArray :typeof  spinal.TypedArray = spinalCore._def.TypedArray;
-const TypedArray_Int32 :typeof  spinal.TypedArray_Int32 = spinalCore._def.TypedArray_Int32;
-const TypedArray_Float32 :typeof  spinal.TypedArray_Float32 = spinalCore._def.TypedArray_Float32;
-const TypedArray_Float64 :typeof  spinal.TypedArray_Float64 = spinalCore._def.TypedArray_Float64;
-const Process :typeof  spinal.Process = spinalCore._def.Process;
-const BindProcess :typeof  spinal.BindProcess = spinalCore._def.BindProcess;
-const globalAny:any = typeof window === 'undefined' ? global : window;
-const FileSystem : typeof spinal.FileSystem =  globalAny.FileSystem;
+const Model: typeof spinal.Model = spinalCore._def.Model;
+const Str: typeof spinal.Str = spinalCore._def.Str;
+const Bool: typeof spinal.Bool = spinalCore._def.Bool;
+const Val: typeof spinal.Val = spinalCore._def.Val;
+const Lst: typeof spinal.Lst = spinalCore._def.Lst;
+const Directory: typeof spinal.Directory = spinalCore._def.Directory;
+const Vec: typeof spinal.Vec = spinalCore._def.Vec;
+const Path: typeof spinal.Path = spinalCore._def.Path;
+const File: typeof spinal.File = spinalCore._def.File;
+const Ptr: typeof spinal.Ptr = spinalCore._def.Ptr;
+const Choice: typeof spinal.Choice = spinalCore._def.Choice;
+const TypedArray: typeof spinal.TypedArray = spinalCore._def.TypedArray;
+const TypedArray_Int32: typeof spinal.TypedArray_Int32 =
+    spinalCore._def.TypedArray_Int32;
+const TypedArray_Float32: typeof spinal.TypedArray_Float32 =
+    spinalCore._def.TypedArray_Float32;
+const TypedArray_Float64: typeof spinal.TypedArray_Float64 =
+    spinalCore._def.TypedArray_Float64;
+const Process: typeof spinal.Process = spinalCore._def.Process;
+const BindProcess: typeof spinal.BindProcess = spinalCore._def.BindProcess;
+const globalAny: any = typeof window === 'undefined' ? global : window;
+const FileSystem: typeof spinal.FileSystem = globalAny.FileSystem;
 
 export default spinalCore;
 export { spinalCore };
