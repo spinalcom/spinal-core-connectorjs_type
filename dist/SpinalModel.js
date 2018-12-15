@@ -25,7 +25,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const spinalCore = require("spinal-core-connectorjs");
 exports.spinalCore = spinalCore;
-require("../declarations/spinal-core-connectorjs");
+require("../declarations/spinal-core-connectorjs.d");
 /// <reference types="typescript" />
 /* tslint:disable:variable-name  class-name */
 const Model = spinalCore._def.Model;

@@ -11,7 +11,7 @@
     "./node_modules/@types/node/index.d.ts"
   ],
   "include": [
-    "src/**/*.ts", "declarations/spinal-core-connectorjs.d.ts",
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules"
