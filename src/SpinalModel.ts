@@ -23,7 +23,7 @@
  */
 
 import * as spinalCore from 'spinal-core-connectorjs';
-import '../declarations/spinal-core-connectorjs.d';
+import './connectorTS';
 /// <reference types="typescript" />
 
 /* tslint:disable:variable-name  class-name */

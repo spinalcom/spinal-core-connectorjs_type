@@ -1,26 +1,5 @@
-/*
- * Copyright 2018 SpinalCom - www.spinalcom.com
- *
- * This file is part of SpinalCore.
- *
- * Please read all of the following terms and conditions
- * of the Free Software license Agreement ("Agreement")
- * carefully.
- *
- * This Agreement is a legally binding contract between
- * the Licensee (as defined below) and SpinalCom that
- * sets forth the terms and conditions that govern your
- * use of the Program. By installing and/or using the
- * Program, you agree to abide by all the terms and
- * conditions stated or referenced herein.
- *
- * If you do not agree to abide by these terms and
- * conditions, do not demonstrate your acceptance and do
- * not install or use the Program.
- * You should have received a copy of the license along
- * with this file. If not, see
- * <http://resources.spinalcom.com/licenses.pdf>.
- */
+
+/* tslint:disable:variable-name  class-name */
 
 declare module 'spinal-core-connectorjs' {
   class spinalCore {
@@ -110,8 +89,8 @@ declare module 'spinal-core-connectorjs' {
      * @memberof spinalCore
      */
     public static load_right(fs: spinal.FileSystem, ptr: number,
-      callback_success: spinal.SpinalLoadCallBackSucess,
-      callback_error?: spinal.SpinalCallBackError): void;
+                             callback_success: spinal.SpinalLoadCallBackSucess,
+                             callback_error?: spinal.SpinalCallBackError): void;
 
     /**
      * share a Model/File to another user
@@ -126,7 +105,7 @@ declare module 'spinal-core-connectorjs' {
     public static share_model(
         fs: spinal.FileSystem, ptr: number, file_name: string,
         right_flag: number, targetName: string): void;
-    public static right_flag: {AD: 1; WR: 2; RD: 4;};
+    public static right_flag: {AD: 1; WR: 2; RD: 4; };
     /**
      * extend one object as a class, using the same 'class' concept as coffeescript
      * @static
@@ -300,7 +279,7 @@ declare namespace spinal {
      * @memberof Lst
      * @returns {*}
      */
-    shift(): any
+    shift(): any;
 
     /**
      * remove item from the list id present
@@ -308,7 +287,7 @@ declare namespace spinal {
      * @returns {*}
      * @memberof Lst
      */
-    remove(item: any): any
+    remove(item: any): any;
 
     /**
      * remove item from the list id present, based on ref comparison
@@ -316,7 +295,7 @@ declare namespace spinal {
      * @returns {*}
      * @memberof Lst
      */
-    remove_ref(item: any): any
+    remove_ref(item: any): any;
 
     /**
      * return a list with item such as f( item ) is true
@@ -436,7 +415,6 @@ declare namespace spinal {
      */
     set_or_push(index: number, value: any): void;
 
-
     /**
      * reduce the size
      * @param {number} size
@@ -450,7 +428,7 @@ declare namespace spinal {
      * @returns {string}
      * @memberof Lst
      */
-    join(separator: string): string
+    join(separator: string): string;
 
     /**
      * last element

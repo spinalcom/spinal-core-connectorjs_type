@@ -1,5 +1,5 @@
 import * as spinalCore from 'spinal-core-connectorjs';
-import '../declarations/spinal-core-connectorjs.d';
+import './connectorTS';
 declare const Model: typeof spinal.Model;
 declare const Str: typeof spinal.Str;
 declare const Bool: typeof spinal.Bool;
