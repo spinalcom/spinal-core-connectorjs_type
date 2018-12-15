@@ -2,8 +2,8 @@
   "name": "spinal-core-connectorjs_type",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/SpinalModel.js",
-  "types": "declaration/SpinalModel.d.ts",
+  "main": "./dist/SpinalModel.js",
+  "types": "./declarations/SpinalModel.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
