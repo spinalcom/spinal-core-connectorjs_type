@@ -52,7 +52,7 @@ declare module 'spinal-core-connectorjs' {
      * @param {(typeof spinal.Model|typeof spinal.Model[])} modelList
      * @memberof spinalCore
      */
-    public static register_models(modelList: typeof spinal.Model|typeof spinal.Model[]): void;
+    public static register_models(modelList: any): void;
     /**
      * loads a model from the file system
      * @static
