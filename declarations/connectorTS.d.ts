@@ -444,12 +444,15 @@ declare namespace spinal {
     class TypedArray<T> extends Model {
         dim(): number;
         size(d?: number): number;
-        set_val(index: number, value: any): void;
+        set_val(index: number[], value: any): void;
         nb_items(): number;
         equals(obj: any): boolean;
-        resize(new_size: number | number[]): void;
+        resize(new_size: number[]): void;
         base_type(): void;
-        get(index?: number | number[]): T;
+        get(): T;
+        get(index: number | number[]): number;
+        base_type(): T;
+        toString(): void;
     }
     class TypedArray_Int32 extends TypedArray<Int32Array> {
         base_type(): Int32Array;
