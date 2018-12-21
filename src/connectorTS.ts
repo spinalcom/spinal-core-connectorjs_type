@@ -476,7 +476,7 @@ declare namespace spinal {
     set_val(index: number, value: any): void;
     nb_items(): number;
     equals(obj: any): boolean;
-    resize(new_size: number): void;
+    resize(new_size: number| number[]): void;
     base_type(): void;
     get(index? : number | number[]): T;
   }
