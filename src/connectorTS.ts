@@ -473,7 +473,7 @@ declare namespace spinal {
   class TypedArray<T> extends Model {
     dim(): number;
     size(d?: number): number;
-    set_val(index: number, value: any): void;
+    set_val(index: number| number[], value: any): void;
     nb_items(): number;
     equals(obj: any): boolean;
     resize(new_size: number| number[]): void;
