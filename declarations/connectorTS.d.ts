@@ -110,7 +110,7 @@ declare namespace spinal {
     type SpinalStoreCallBackSucess = () => void;
     type SpinalCallBackError = () => void;
     type SpinalLoadCallBackSucess = (model: Model) => void;
-    type SpinalLoadCallBack = (model: Model, error: boolean) => void;
+    type SpinalLoadCallBack<T> = (model: T, error: boolean) => void;
     type SpinalLoadTypeCallBackSucess = (model: Model) => void;
     type SpinalFilterFunction = (item: Model) => boolean;
     type SpinalSortFunction = (item1: Model, item2: Model) => number;
@@ -405,11 +405,11 @@ declare namespace spinal {
     }
     class Vec extends Lst<Val> {
     }
-    class Directory extends Lst<File> {
-        find(name: string): File | undefined;
-        load(name: string, callBack: SpinalLoadCallBack): void;
-        add_file(name: string, obj: Model, params?: object): File;
-        force_add_file(name: string, obj: Model, params?: object): File;
+    class Directory<T> extends Lst<File<T>> {
+        find(name: string): File<T> | undefined;
+        load(name: string, callBack: SpinalLoadCallBack<Model>): void;
+        add_file(name: string, obj: Model, params?: object): File<T>;
+        force_add_file(name: string, obj: Model, params?: object): File<T>;
     }
     class Path extends Model {
         /**
@@ -421,21 +421,21 @@ declare namespace spinal {
         remaining: number;
         to_upload: number;
     }
-    class File extends Model {
+    class File<T> extends Model {
         name: Str;
-        _ptr: Ptr;
+        _ptr: Ptr<T>;
         _info: Model;
-        load(callback: SpinalLoadCallBack): void;
+        load(callback: SpinalLoadCallBack<T>): void;
     }
-    class Ptr extends Model {
-        constructor(model: Model);
+    class Ptr<T> extends Model {
+        constructor(model: T);
         data: {
-            model?: Model;
+            model?: T;
             value?: number;
         };
-        load(callback: SpinalLoadCallBack): void;
+        load(callback: SpinalLoadCallBack<T>): void;
     }
-    class Pbr extends Ptr {
+    class Pbr<T> extends Ptr<T> {
     }
     class Choice extends Model {
         num: Val;
@@ -477,11 +477,11 @@ declare namespace spinal {
      */
     class FileSystem {
         constructor();
-        load(path: string, callback: SpinalLoadCallBack): void;
-        load_type(type: string, callback: SpinalLoadCallBack): void;
-        load_or_make_dir(dir: 'string', callback: SpinalLoadCallBack): void;
-        load_ptr(ptr: number, callback: SpinalLoadCallBack): void;
-        load_right(ptr: number, callback: SpinalLoadCallBack): void;
+        load(path: string, callback: SpinalLoadCallBack<any>): void;
+        load_type(type: string, callback: SpinalLoadCallBack<any>): void;
+        load_or_make_dir(dir: 'string', callback: SpinalLoadCallBack<any>): void;
+        load_ptr(ptr: number, callback: SpinalLoadCallBack<any>): void;
+        load_right(ptr: number, callback: SpinalLoadCallBack<any>): void;
         share_model(ptr: number, file_name: string, share_type: number, targetName: string): void;
         static get_inst(): FileSystem;
         static debug: boolean;
