@@ -470,22 +470,23 @@ declare namespace spinal {
     num: Val;
     lst: Lst<any>;
   }
-  class TypedArray extends Model {
+  class TypedArray<T> extends Model {
     dim(): number;
-    size(d: number): number;
+    size(d?: number): number;
     set_val(index: number, value: any): void;
     nb_items(): number;
     equals(obj: any): boolean;
     resize(new_size: number): void;
     base_type(): void;
+    get(index? : number | number[]): T;
   }
-  class TypedArray_Int32 extends TypedArray {
+  class TypedArray_Int32 extends TypedArray<Int32Array> {
     base_type(): Int32Array;
   }
-  class TypedArray_Float32 extends TypedArray {
+  class TypedArray_Float32 extends TypedArray<Float32Array>  {
     base_type(): Float32Array;
   }
-  class TypedArray_Float64 extends TypedArray {
+  class TypedArray_Float64 extends TypedArray<Float64Array>  {
     base_type(): Float64Array;
   }
   class Process extends Model {
