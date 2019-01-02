@@ -115,7 +115,15 @@ declare namespace spinal {
     type SpinalFilterFunction = (item: Model) => boolean;
     type SpinalSortFunction = (item1: Model, item2: Model) => number;
     class Model {
-        constructor(obj?: object);
+        /**
+         *Creates an instance of Model.
+         * @param {{[nameAttr: string]: any}} [object]
+         * must be in a form `{ [nameAttr: string]: typeof Model, ... }`
+         * @memberof Model
+         */
+        constructor(object?: {
+            [nameAttr: string]: any;
+        });
         /**
          * ### return a copy of data in a "standard JS" representation
          * (e.g. string, number, objects, ...).
@@ -141,10 +149,13 @@ declare namespace spinal {
         set(opt: any): boolean;
         /**
          * add attribute
-         * @param {object} object
+         * @param {{[nameAttr: string]: any}} object
+         * must be in a form `{ [nameAttr: string]: typeof Model, ... }`
          * @memberof Model
          */
-        add_attr(object: object): void;
+        add_attr(object: {
+            [nameAttr: string]: any;
+        }): void;
         /**
          * add attribute
          * @param {string} name
