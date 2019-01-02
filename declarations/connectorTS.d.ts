@@ -141,15 +141,18 @@ declare namespace spinal {
         set(opt: any): boolean;
         /**
          * add attribute
-         * can be called with
-         *  - name, instance of Model (two arguments)
-         *  - { name_1: instance_1, name_2: instance_2, ... } (only one argument)
-         * @param {(string|object)} n
-         * @param {*} [p]
+         * @param {object} object
+         * @memberof Model
+         */
+        add_attr(object: object): void;
+        /**
+         * add attribute
+         * @param {string} name
+         * @param {*} [instanceOfModel]
          * @param {boolean} [signal_change=true]
          * @memberof Model
          */
-        add_attr(n: string | object, p?: any, signal_change?: boolean): void;
+        add_attr(name: string, instanceOfModel?: any, signal_change?: boolean): void;
         /**
          * change attribute named `name` to `opt` (use references for comparison)
          * @param {string} name
