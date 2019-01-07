@@ -131,7 +131,7 @@ declare namespace spinal {
   type SpinalSortFunction = (item1: Model, item2: Model) => number;
 
   class Model {
-
+    [nameAttr: string]: any;
     /**
      *Creates an instance of Model.
      * @param {{[nameAttr: string]: any}} [object]
