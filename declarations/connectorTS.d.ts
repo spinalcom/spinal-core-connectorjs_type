@@ -110,7 +110,7 @@ declare namespace spinal {
     type SpinalStoreCallBackSucess = () => void;
     type SpinalCallBackError = () => void;
     type SpinalLoadCallBackSucess = (model: Model) => void;
-    type SpinalLoadCallBack<T> = (model: T, error: boolean) => void;
+    type SpinalLoadCallBack<T extends Model> = (model: T, error: boolean) => void;
     type SpinalLoadTypeCallBackSucess = (model: Model) => void;
     type SpinalFilterFunction = (item: Model) => boolean;
     type SpinalSortFunction = (item1: Model, item2: Model) => number;
@@ -244,7 +244,7 @@ declare namespace spinal {
      * @class Lst
      * @extends {Model}
      */
-    class Lst<T> extends Model {
+    class Lst<T extends Model> extends Model {
         constructor(data?: any[]);
         length: number;
         get(): any[];
@@ -420,7 +420,7 @@ declare namespace spinal {
     }
     class Vec extends Lst<Val> {
     }
-    class Directory<T> extends Lst<File<T>> {
+    class Directory<T extends Model> extends Lst<File<T>> {
         find(name: string): File<T> | undefined;
         load(name: string, callBack: SpinalLoadCallBack<Model>): void;
         add_file(name: string, obj: Model, params?: object): File<T>;
@@ -436,13 +436,13 @@ declare namespace spinal {
         remaining: number;
         to_upload: number;
     }
-    class File<T> extends Model {
+    class File<T extends Model> extends Model {
         name: Str;
         _ptr: Ptr<T>;
         _info: Model;
         load(callback: SpinalLoadCallBack<T>): void;
     }
-    class Ptr<T> extends Model {
+    class Ptr<T extends Model> extends Model {
         constructor(model: T);
         data: {
             model?: T;
@@ -450,13 +450,13 @@ declare namespace spinal {
         };
         load(callback: SpinalLoadCallBack<T>): void;
     }
-    class Pbr<T> extends Ptr<T> {
+    class Pbr<T extends Model> extends Ptr<T> {
     }
     class Choice extends Model {
         num: Val;
         lst: Lst<any>;
     }
-    class TypedArray<T> extends Model {
+    class TypedArray<T extends Int32Array | Float32Array | Float64Array> extends Model {
         dim(): number;
         size(d?: number): number;
         set_val(index: number[], value: any): void;
@@ -492,14 +492,14 @@ declare namespace spinal {
      */
     class FileSystem {
         constructor();
-        load(path: string, callback: SpinalLoadCallBack<any>): void;
-        load_type(type: string, callback: SpinalLoadCallBack<any>): void;
-        load_or_make_dir(dir: 'string', callback: SpinalLoadCallBack<any>): void;
-        load_ptr(ptr: number, callback: SpinalLoadCallBack<any>): void;
-        load_right(ptr: number, callback: SpinalLoadCallBack<any>): void;
+        load<T extends Model>(path: string, callback: SpinalLoadCallBack<T>): void;
+        load_type<T extends Model>(type: string, callback: SpinalLoadCallBack<Model>): void;
+        load_or_make_dir<T extends Model>(dir: 'string', callback: SpinalLoadCallBack<Directory<T>>): void;
+        load_ptr<T extends Model>(ptr: number, callback: SpinalLoadCallBack<T>): void;
+        load_right<T extends Model>(ptr: number, callback: SpinalLoadCallBack<T>): void;
         share_model(ptr: number, file_name: string, share_type: number, targetName: string): void;
         static get_inst(): FileSystem;
-        static extend(child: any, prent: any): void;
+        static extend(child: any, parent: any): void;
         static debug: boolean;
         static _sig_server: boolean;
         static _disp: boolean;
