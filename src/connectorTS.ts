@@ -527,9 +527,12 @@ declare namespace spinal {
         ptr: number, file_name: string, share_type: number,
         targetName: string): void;
     public static get_inst(): FileSystem;
+    public static extend(child, prent): void;
     public static debug: boolean;
     public static _sig_server: boolean;
     public static _disp: boolean;
     public static CONNECTOR_TYPE: 'Node'|'Browser';
+    public static _objects: {[key: number]: Model};
+    public static _tmp_objects: {[key: number]: Model};
   }
 }
