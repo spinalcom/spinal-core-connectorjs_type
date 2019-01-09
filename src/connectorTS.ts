@@ -251,7 +251,10 @@ declare namespace spinal {
     toggle(): void;
     toBoolean(): boolean;
   }
-  class Val extends Obj {}
+  class Val extends Obj {
+    constructor(value?: number|Val|string|boolean)
+    get(): number;
+  }
   /**
    * vector of objects inherited from Model
    * @class Lst
