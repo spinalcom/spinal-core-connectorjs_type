@@ -443,7 +443,7 @@ declare namespace spinal {
         load(callback: SpinalLoadCallBack<T>): void;
     }
     class Ptr<T extends Model> extends Model {
-        constructor(model?: T);
+        constructor(model?: T | number);
         data: {
             model?: T;
             value?: number;
