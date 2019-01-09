@@ -462,7 +462,7 @@ declare namespace spinal {
      * @param {File} file A real File
      * @memberof Path
      */
-    constructor(file: any);
+    constructor(file?: any);
     remaining: number;
     to_upload: number;
   }
@@ -473,7 +473,7 @@ declare namespace spinal {
     load(callback: SpinalLoadCallBack<T>): void;
   }
   class Ptr<T extends Model> extends Model {
-    constructor(model: T);
+    constructor(model?: T);
     data: {model?: T, value?: number};
     load(callback: SpinalLoadCallBack<T>): void;
   }
@@ -504,12 +504,12 @@ declare namespace spinal {
   class TypedArray_Float64 extends TypedArray<Float64Array>  {
     base_type(): Float64Array;
   }
-  class Process extends Model {
+  class Process {
     constructor(m: Model, onchange_construction?: boolean);
     destructor(): void;
     onchange(): void;
   }
-  class BindProcess extends Model {
+  class BindProcess extends Process {
     constructor(
         m: Model, onchange_construction: boolean, f: SpinalOnChangeBindModel);
   }
