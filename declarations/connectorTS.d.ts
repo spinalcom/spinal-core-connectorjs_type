@@ -499,9 +499,16 @@ declare namespace spinal {
         load_right(ptr: number, callback: SpinalLoadCallBack<any>): void;
         share_model(ptr: number, file_name: string, share_type: number, targetName: string): void;
         static get_inst(): FileSystem;
+        static extend(child: any, prent: any): void;
         static debug: boolean;
         static _sig_server: boolean;
         static _disp: boolean;
         static CONNECTOR_TYPE: 'Node' | 'Browser';
+        static _objects: {
+            [key: number]: Model;
+        };
+        static _tmp_objects: {
+            [key: number]: Model;
+        };
     }
 }
