@@ -417,10 +417,10 @@ declare namespace spinal {
     /**
      * Insert a Lst in the index
      * @param {number} index
-     * @param {Lst} list
+     * @param {(T[]|Lst<T>|any[]|Lst<any>)} list
      * @memberof Lst
      */
-    insert(index: number, list: Lst<T>): void;
+    insert(index: number, list: T[]|Lst<T>|any[]|Lst<any>): void;
 
     /**
      * permits to set an item or to grow the list if index == length
