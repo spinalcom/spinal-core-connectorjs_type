@@ -238,6 +238,7 @@ declare namespace spinal {
   }
 
   class Obj extends Model {}
+
   class Str extends Obj {
     constructor(data?: Str|string);
     length: number;
@@ -245,16 +246,19 @@ declare namespace spinal {
     contains(str: string): boolean;
     equals(str: Str|string): boolean;
   }
+
   class Bool extends Obj {
     constructor(data?: boolean)
     get(): boolean;
     toggle(): void;
     toBoolean(): boolean;
   }
+
   class Val extends Obj {
     constructor(value?: number|Val|string|boolean)
     get(): number;
   }
+
   /**
    * vector of objects inherited from Model
    * @class Lst
@@ -473,6 +477,7 @@ declare namespace spinal {
     name: Str;
     _ptr: Ptr<T>;
     _info: Model;
+    constructor(name: string, ptr_or_model:number|Model|Ptr<any>, info: Model|Object);
     load(callback: SpinalLoadCallBack<T>): void;
   }
   class Ptr<T extends Model> extends Model {
@@ -483,9 +488,11 @@ declare namespace spinal {
   class Pbr<T extends Model> extends Ptr<T> {}
   class Choice extends Model {
     num: Val;
-    lst: Lst<any>;
+    lst: Lst<Str>;
+    constructor(InitIdx?: Val|number, stringChoises?: (string|Str)[]);
   }
   class TypedArray<T extends Int32Array|Float32Array|Float64Array> extends Model {
+    constructor(size?: number, data?: any[]);
     dim(): number;
     size(d?: number): number;
     set_val(index: number[]|number, value: any): void;

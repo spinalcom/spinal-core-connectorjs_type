@@ -442,6 +442,7 @@ declare namespace spinal {
         name: Str;
         _ptr: Ptr<T>;
         _info: Model;
+        constructor(name: string, ptr_or_model: number | Model | Ptr<any>, info: Model | Object);
         load(callback: SpinalLoadCallBack<T>): void;
     }
     class Ptr<T extends Model> extends Model {
@@ -456,9 +457,11 @@ declare namespace spinal {
     }
     class Choice extends Model {
         num: Val;
-        lst: Lst<any>;
+        lst: Lst<Str>;
+        constructor(InitIdx?: Val | number, stringChoises?: (string | Str)[]);
     }
     class TypedArray<T extends Int32Array | Float32Array | Float64Array> extends Model {
+        constructor(size?: number, data?: any[]);
         dim(): number;
         size(d?: number): number;
         set_val(index: number[] | number, value: any): void;

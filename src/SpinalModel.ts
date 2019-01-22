@@ -28,6 +28,7 @@ import * as spinalCore from 'spinal-core-connectorjs';
 /// <reference types="typescript" />
 
 /* tslint:disable:variable-name  class-name */
+
 const Model: typeof spinal.Model = spinalCore._def.Model;
 const Str: typeof spinal.Str = spinalCore._def.Str;
 const Bool: typeof spinal.Bool = spinalCore._def.Bool;

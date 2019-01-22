@@ -1,20 +1,21 @@
 {
   "name": "spinal-core-connectorjs_type",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "types for spinal-core-connectorjs + expose es6 like",
   "main": "./dist/SpinalModel.js",
   "types": "./declarations/SpinalModel.d.ts",
   "scripts": {
+    "build": "rm -r declarations dist && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^10.12.12",
     "spinal-core-connectorjs": "git+https://github.com/spinalcom/spinal-core-connectorjs.git"
   },
   "devDependencies": {
+    "@types/node": "^10.12.12",
     "jsdoc-to-markdown": "^4.0.1",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.1",
