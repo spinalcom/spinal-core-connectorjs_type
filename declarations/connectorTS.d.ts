@@ -499,7 +499,7 @@ declare namespace spinal {
         constructor();
         load<T extends Model>(path: string, callback: SpinalLoadCallBack<T>): void;
         load_type<T extends Model>(type: string, callback: SpinalLoadCallBack<Model>): void;
-        load_or_make_dir<T extends Model>(dir: 'string', callback: SpinalLoadCallBack<Directory<T>>): void;
+        load_or_make_dir<T extends Model>(dir: string, callback: SpinalLoadCallBack<Directory<T>>): void;
         load_ptr<T extends Model>(ptr: number, callback: SpinalLoadCallBack<T>): void;
         load_right<T extends Model>(ptr: number, callback: SpinalLoadCallBack<T>): void;
         share_model(ptr: number, file_name: string, share_type: number, targetName: string): void;

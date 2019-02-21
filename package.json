@@ -1,6 +1,6 @@
 {
   "name": "spinal-core-connectorjs_type",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "types for spinal-core-connectorjs + expose es6 like",
   "main": "./dist/SpinalModel.js",
   "types": "./declarations/SpinalModel.d.ts",
