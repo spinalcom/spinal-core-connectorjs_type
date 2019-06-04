@@ -51,8 +51,9 @@ const Process: typeof spinal.Process = spinalCore._def.Process;
 const BindProcess: typeof spinal.BindProcess = spinalCore._def.BindProcess;
 const globalAny: any = typeof window === 'undefined' ? global : window;
 const FileSystem: typeof spinal.FileSystem = globalAny.FileSystem;
-
+const Pbr: typeof  spinal.Pbr = spinalCore._def.Pbr;
 export default spinalCore;
+export {Pbr};
 export { spinalCore };
 export { Model };
 export { Str };

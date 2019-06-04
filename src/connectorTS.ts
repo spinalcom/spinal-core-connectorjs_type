@@ -21,6 +21,7 @@ declare module 'spinal-core-connectorjs' {
       TypedArray_Float64: typeof spinal.TypedArray_Float64,
       Process: typeof spinal.Process,
       BindProcess: typeof spinal.BindProcess,
+      Pbr: typeof spinal.Pbr
     };
     /**
      * Function to intialize the session to SpinalHub

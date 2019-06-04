@@ -65,5 +65,7 @@ exports.BindProcess = BindProcess;
 const globalAny = typeof window === 'undefined' ? global : window;
 const FileSystem = globalAny.FileSystem;
 exports.FileSystem = FileSystem;
+const Pbr = spinalCore._def.Pbr;
+exports.Pbr = Pbr;
 exports.default = spinalCore;
 //# sourceMappingURL=SpinalModel.js.map
