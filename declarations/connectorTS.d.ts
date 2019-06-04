@@ -14,7 +14,6 @@ declare module 'spinal-core-connectorjs' {
             Choice: typeof spinal.Choice;
             TypedArray: typeof spinal.TypedArray;
             TypedArray_Int32: typeof spinal.TypedArray_Int32;
-            TypedArray_Float32: typeof spinal.TypedArray_Float32;
             TypedArray_Float64: typeof spinal.TypedArray_Float64;
             Process: typeof spinal.Process;
             BindProcess: typeof spinal.BindProcess;

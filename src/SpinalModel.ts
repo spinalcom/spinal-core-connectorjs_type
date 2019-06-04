@@ -43,8 +43,6 @@ const Choice: typeof spinal.Choice = spinalCore._def.Choice;
 const TypedArray: typeof spinal.TypedArray = spinalCore._def.TypedArray;
 const TypedArray_Int32: typeof spinal.TypedArray_Int32 =
     spinalCore._def.TypedArray_Int32;
-const TypedArray_Float32: typeof spinal.TypedArray_Float32 =
-    spinalCore._def.TypedArray_Float32;
 const TypedArray_Float64: typeof spinal.TypedArray_Float64 =
     spinalCore._def.TypedArray_Float64;
 const Process: typeof spinal.Process = spinalCore._def.Process;
@@ -68,7 +66,6 @@ export { Ptr };
 export { Choice };
 export { TypedArray };
 export { TypedArray_Int32 };
-export { TypedArray_Float32 };
 export { TypedArray_Float64 };
 export { Process };
 export { BindProcess };

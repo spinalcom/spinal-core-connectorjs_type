@@ -5,11 +5,10 @@
     "outDir": "dist",
     "declaration": true,
     "declarationDir": "./declarations",
-    "sourceMap": true
+    "sourceMap": true,
+    "lib": ["es2016", "dom"],
+    "types": ["node"]
   },
-  "files": [
-    "./node_modules/@types/node/index.d.ts"
-  ],
   "include": [
     "src/**/*.ts"
   ],
