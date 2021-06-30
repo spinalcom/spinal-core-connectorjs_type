@@ -300,14 +300,14 @@ declare namespace spinal {
          * @param {SpinalFilterFunction} f
          * @memberof Lst
          */
-        filter(f: SpinalFilterFunction): void;
+        filter(f: SpinalFilterFunction): Lst<T>;
         /**
          * return the first item such as f( item ) is true. If not item, return
          * undefined
          * @param {SpinalFilterFunction} f
          * @memberof Lst
          */
-        detect(f: SpinalSortFunction): void;
+        detect(f: SpinalSortFunction): T;
         /**
          * sort item depending function and return a new Array
          * @param {SpinalSortFunction} fun_sort
