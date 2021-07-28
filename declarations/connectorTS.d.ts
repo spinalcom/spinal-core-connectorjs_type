@@ -112,7 +112,7 @@ declare namespace spinal {
     type SpinalLoadCallBackSucess = (model: Model) => void;
     type SpinalLoadCallBack<T extends Model> = (model: T, error: boolean) => void;
     type SpinalLoadTypeCallBackSucess = (model: Model) => void;
-    type SpinalFilterFunction<T extends Model>= (item: T) => boolean;
+    type SpinalFilterFunction<T extends Model> = (item: T) => boolean;
     type SpinalSortFunction = (item1: Model, item2: Model) => number;
     class Model {
         [nameAttr: string]: any;
@@ -298,9 +298,10 @@ declare namespace spinal {
         /**
          * return a list with item such as f( item ) is true
          * @param {SpinalFilterFunction} f
+         * @returns {T[]}
          * @memberof Lst
          */
-        filter(f: SpinalFilterFunction<T>): Lst<T>;
+        filter(f: SpinalFilterFunction<T>): T[];
         /**
          * return the first item such as f( item ) is true. If not item, return
          * undefined
