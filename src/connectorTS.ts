@@ -329,7 +329,7 @@ declare namespace spinal {
      * @param {SpinalFilterFunction} f
      * @memberof Lst
      */
-    detect(f: SpinalSortFunction): T;
+    detect(f: SpinalFilterFunction<T>): T | undefined;
     /**
      * sort item depending function and return a new Array
      * @param {SpinalSortFunction} fun_sort
