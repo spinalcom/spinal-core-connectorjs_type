@@ -22,48 +22,20 @@
  * with this file. If not, see
  * <http://resources.spinalcom.com/licenses.pdf>.
  */
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-require("./connectorTS");
-const spinalCore = require("spinal-core-connectorjs");
-exports.spinalCore = spinalCore;
-/// <reference types="typescript" />
-/* tslint:disable:variable-name  class-name */
-const Model = spinalCore._def.Model;
-exports.Model = Model;
-const Str = spinalCore._def.Str;
-exports.Str = Str;
-const Bool = spinalCore._def.Bool;
-exports.Bool = Bool;
-const Val = spinalCore._def.Val;
-exports.Val = Val;
-const Lst = spinalCore._def.Lst;
-exports.Lst = Lst;
-const Directory = spinalCore._def.Directory;
-exports.Directory = Directory;
-const Vec = spinalCore._def.Vec;
-exports.Vec = Vec;
-const Path = spinalCore._def.Path;
-exports.Path = Path;
-const File = spinalCore._def.File;
-exports.File = File;
-const Ptr = spinalCore._def.Ptr;
-exports.Ptr = Ptr;
-const Choice = spinalCore._def.Choice;
-exports.Choice = Choice;
-const TypedArray = spinalCore._def.TypedArray;
-exports.TypedArray = TypedArray;
-const TypedArray_Int32 = spinalCore._def.TypedArray_Int32;
-exports.TypedArray_Int32 = TypedArray_Int32;
-const TypedArray_Float64 = spinalCore._def.TypedArray_Float64;
-exports.TypedArray_Float64 = TypedArray_Float64;
-const Process = spinalCore._def.Process;
-exports.Process = Process;
-const BindProcess = spinalCore._def.BindProcess;
-exports.BindProcess = BindProcess;
-const globalAny = typeof window === 'undefined' ? global : window;
-const FileSystem = globalAny.FileSystem;
-exports.FileSystem = FileSystem;
-const Pbr = spinalCore._def.Pbr;
-exports.Pbr = Pbr;
-exports.default = spinalCore;
+__exportStar(require("spinal-core-connectorjs"), exports);
 //# sourceMappingURL=SpinalModel.js.map
