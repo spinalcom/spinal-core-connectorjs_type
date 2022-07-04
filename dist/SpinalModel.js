@@ -38,4 +38,6 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("spinal-core-connectorjs"), exports);
+const spinalCore = require("spinal-core-connectorjs");
+exports.default = spinalCore;
 //# sourceMappingURL=SpinalModel.js.map
