@@ -24,7 +24,11 @@
  */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -35,75 +39,57 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FileSystem = exports.BindProcess = exports.Process = exports.TypedArray_Float64 = exports.TypedArray_Int32 = exports.TypedArray = exports.Choice = exports.Ptr = exports.File = exports.Path = exports.Vec = exports.Directory = exports.Lst = exports.Val = exports.Bool = exports.Str = exports.Model = exports.spinalCore = exports.Pbr = void 0;
 __exportStar(require("spinal-core-connectorjs"), exports);
-const spinalCore = require("spinal-core-connectorjs");
-exports.spinalCore = spinalCore;
-exports.default = spinalCore;
-// following is old spinalcorejs compatibility
 const spinal_core_connectorjs_1 = require("spinal-core-connectorjs");
-// @ts-ignore
-const Model = spinal_core_connectorjs_1.Model ? spinal_core_connectorjs_1.Model : spinalCore._def.Model;
+Object.defineProperty(exports, "spinalCore", { enumerable: true, get: function () { return spinal_core_connectorjs_1.spinalCore; } });
+exports.default = spinal_core_connectorjs_1.spinalCore;
+// following is old spinalcorejs compatibility
+const spinal_core_connectorjs_2 = require("spinal-core-connectorjs");
+const Model = spinal_core_connectorjs_2.Model ? spinal_core_connectorjs_2.Model : spinal_core_connectorjs_1.spinalCore._def.Model;
 exports.Model = Model;
-// @ts-ignore
-const Str = spinal_core_connectorjs_1.Str ? spinal_core_connectorjs_1.Str : spinalCore._def.Str;
+const Str = spinal_core_connectorjs_2.Str ? spinal_core_connectorjs_2.Str : spinal_core_connectorjs_1.spinalCore._def.Str;
 exports.Str = Str;
-// @ts-ignore
-const Bool = spinal_core_connectorjs_1.Bool ? spinal_core_connectorjs_1.Bool : spinalCore._def.Bool;
+const Bool = spinal_core_connectorjs_2.Bool ? spinal_core_connectorjs_2.Bool : spinal_core_connectorjs_1.spinalCore._def.Bool;
 exports.Bool = Bool;
-// @ts-ignore
-const Val = spinal_core_connectorjs_1.Val ? spinal_core_connectorjs_1.Val : spinalCore._def.Val;
+const Val = spinal_core_connectorjs_2.Val ? spinal_core_connectorjs_2.Val : spinal_core_connectorjs_1.spinalCore._def.Val;
 exports.Val = Val;
-// @ts-ignore
-const Lst = spinal_core_connectorjs_1.Lst ? spinal_core_connectorjs_1.Lst : spinalCore._def.Lst;
+const Lst = spinal_core_connectorjs_2.Lst ? spinal_core_connectorjs_2.Lst : spinal_core_connectorjs_1.spinalCore._def.Lst;
 exports.Lst = Lst;
-const Directory = spinal_core_connectorjs_1.Directory
-    ? spinal_core_connectorjs_1.Directory
-    : // @ts-ignore
-        spinalCore._def.Directory;
+const Directory = spinal_core_connectorjs_2.Directory
+    ? spinal_core_connectorjs_2.Directory
+    : spinal_core_connectorjs_1.spinalCore._def.Directory;
 exports.Directory = Directory;
-// @ts-ignore
-const Vec = spinal_core_connectorjs_1.Vec ? spinal_core_connectorjs_1.Vec : spinalCore._def.Vec;
+const Vec = spinal_core_connectorjs_2.Vec ? spinal_core_connectorjs_2.Vec : spinal_core_connectorjs_1.spinalCore._def.Vec;
 exports.Vec = Vec;
-// @ts-ignore
-const Path = spinal_core_connectorjs_1.Path ? spinal_core_connectorjs_1.Path : spinalCore._def.Path;
+const Path = spinal_core_connectorjs_2.Path ? spinal_core_connectorjs_2.Path : spinal_core_connectorjs_1.spinalCore._def.Path;
 exports.Path = Path;
-// @ts-ignore
-const File = spinal_core_connectorjs_1.File ? spinal_core_connectorjs_1.File : spinalCore._def.File;
+const File = spinal_core_connectorjs_2.File ? spinal_core_connectorjs_2.File : spinal_core_connectorjs_1.spinalCore._def.File;
 exports.File = File;
-// @ts-ignore
-const Ptr = spinal_core_connectorjs_1.Ptr ? spinal_core_connectorjs_1.Ptr : spinalCore._def.Ptr;
+const Ptr = spinal_core_connectorjs_2.Ptr ? spinal_core_connectorjs_2.Ptr : spinal_core_connectorjs_1.spinalCore._def.Ptr;
 exports.Ptr = Ptr;
-// @ts-ignore
-const Pbr = spinal_core_connectorjs_1.Pbr ? spinal_core_connectorjs_1.Pbr : spinalCore._def.Pbr;
+const Pbr = spinal_core_connectorjs_2.Pbr ? spinal_core_connectorjs_2.Pbr : spinal_core_connectorjs_1.spinalCore._def.Pbr;
 exports.Pbr = Pbr;
-// @ts-ignore
-const Choice = spinal_core_connectorjs_1.Choice ? spinal_core_connectorjs_1.Choice : spinalCore._def.Choice;
+const Choice = spinal_core_connectorjs_2.Choice ? spinal_core_connectorjs_2.Choice : spinal_core_connectorjs_1.spinalCore._def.Choice;
 exports.Choice = Choice;
-const TypedArray = spinal_core_connectorjs_1.TypedArray
-    ? spinal_core_connectorjs_1.TypedArray
-    : // @ts-ignore
-        spinalCore._def.TypedArray;
+const TypedArray = spinal_core_connectorjs_2.TypedArray
+    ? spinal_core_connectorjs_2.TypedArray
+    : spinal_core_connectorjs_1.spinalCore._def.TypedArray;
 exports.TypedArray = TypedArray;
-const TypedArray_Int32 = spinal_core_connectorjs_1.TypedArray_Int32
-    ? spinal_core_connectorjs_1.TypedArray_Int32
-    : // @ts-ignore
-        spinalCore._def.TypedArray_Int32;
+const TypedArray_Int32 = spinal_core_connectorjs_2.TypedArray_Int32
+    ? spinal_core_connectorjs_2.TypedArray_Int32
+    : spinal_core_connectorjs_1.spinalCore._def.TypedArray_Int32;
 exports.TypedArray_Int32 = TypedArray_Int32;
-const TypedArray_Float64 = spinal_core_connectorjs_1.TypedArray_Float64
-    ? spinal_core_connectorjs_1.TypedArray_Float64
-    : // @ts-ignore
-        spinalCore._def.TypedArray_Float64;
+const TypedArray_Float64 = spinal_core_connectorjs_2.TypedArray_Float64
+    ? spinal_core_connectorjs_2.TypedArray_Float64
+    : spinal_core_connectorjs_1.spinalCore._def.TypedArray_Float64;
 exports.TypedArray_Float64 = TypedArray_Float64;
-// @ts-ignore
-const Process = spinal_core_connectorjs_1.Process ? spinal_core_connectorjs_1.Process : spinalCore._def.Process;
+const Process = spinal_core_connectorjs_2.Process ? spinal_core_connectorjs_2.Process : spinal_core_connectorjs_1.spinalCore._def.Process;
 exports.Process = Process;
-const BindProcess = spinal_core_connectorjs_1.BindProcess
-    ? spinal_core_connectorjs_1.BindProcess
-    : // @ts-ignore
-        spinalCore._def.BindProcess;
+const BindProcess = spinal_core_connectorjs_2.BindProcess
+    ? spinal_core_connectorjs_2.BindProcess
+    : spinal_core_connectorjs_1.spinalCore._def.BindProcess;
 exports.BindProcess = BindProcess;
-const FileSystem = spinal_core_connectorjs_1.FileSystem
-    ? spinal_core_connectorjs_1.FileSystem
-    : // @ts-ignore
-        spinalCore._def.FileSystem;
+const FileSystem = spinal_core_connectorjs_2.FileSystem
+    ? spinal_core_connectorjs_2.FileSystem
+    : spinal_core_connectorjs_1.spinalCore._def.FileSystem;
 exports.FileSystem = FileSystem;
 //# sourceMappingURL=SpinalModel.js.map

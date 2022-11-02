@@ -23,7 +23,7 @@
  */
 
 export * from 'spinal-core-connectorjs';
-import * as spinalCore from 'spinal-core-connectorjs';
+import { spinalCore } from 'spinal-core-connectorjs';
 export default spinalCore;
 
 // following is old spinalcorejs compatibility
@@ -48,54 +48,48 @@ import {
   FileSystem as _FileSystem,
   Pbr as _Pbr,
 } from 'spinal-core-connectorjs';
-// @ts-ignore
+
 const Model: typeof _Model = _Model ? _Model : spinalCore._def.Model;
-// @ts-ignore
+
 const Str: typeof _Str = _Str ? _Str : spinalCore._def.Str;
-// @ts-ignore
+
 const Bool: typeof _Bool = _Bool ? _Bool : spinalCore._def.Bool;
-// @ts-ignore
+
 const Val: typeof _Val = _Val ? _Val : spinalCore._def.Val;
-// @ts-ignore
+
 const Lst: typeof _Lst = _Lst ? _Lst : spinalCore._def.Lst;
 const Directory: typeof _Directory = _Directory
   ? _Directory
-  : // @ts-ignore
-    spinalCore._def.Directory;
-// @ts-ignore
+  : spinalCore._def.Directory;
+
 const Vec: typeof _Vec = _Vec ? _Vec : spinalCore._def.Vec;
-// @ts-ignore
+
 const Path: typeof _Path = _Path ? _Path : spinalCore._def.Path;
-// @ts-ignore
+
 const File: typeof _File = _File ? _File : spinalCore._def.File;
-// @ts-ignore
+
 const Ptr: typeof _Ptr = _Ptr ? _Ptr : spinalCore._def.Ptr;
-// @ts-ignore
+
 const Pbr: typeof _Pbr = _Pbr ? _Pbr : spinalCore._def.Pbr;
-// @ts-ignore
+
 const Choice: typeof _Choice = _Choice ? _Choice : spinalCore._def.Choice;
 const TypedArray: typeof _TypedArray = _TypedArray
   ? _TypedArray
-  : // @ts-ignore
-    spinalCore._def.TypedArray;
+  : spinalCore._def.TypedArray;
 const TypedArray_Int32: typeof _TypedArray_Int32 = _TypedArray_Int32
   ? _TypedArray_Int32
-  : // @ts-ignore
-    spinalCore._def.TypedArray_Int32;
+  : spinalCore._def.TypedArray_Int32;
 const TypedArray_Float64: typeof _TypedArray_Float64 = _TypedArray_Float64
   ? _TypedArray_Float64
-  : // @ts-ignore
-    spinalCore._def.TypedArray_Float64;
-// @ts-ignore
+  : spinalCore._def.TypedArray_Float64;
+
 const Process: typeof _Process = _Process ? _Process : spinalCore._def.Process;
 const BindProcess: typeof _BindProcess = _BindProcess
   ? _BindProcess
-  : // @ts-ignore
-    spinalCore._def.BindProcess;
+  : spinalCore._def.BindProcess;
 const FileSystem: typeof _FileSystem = _FileSystem
   ? _FileSystem
-  : // @ts-ignore
-    spinalCore._def.FileSystem;
+  : spinalCore._def.FileSystem;
 
 export { Pbr };
 export { spinalCore };

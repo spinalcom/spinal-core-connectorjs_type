@@ -1,5 +1,5 @@
 export * from 'spinal-core-connectorjs';
-import * as spinalCore from 'spinal-core-connectorjs';
+import { spinalCore } from 'spinal-core-connectorjs';
 export default spinalCore;
 import { Model as _Model, Str as _Str, Bool as _Bool, Val as _Val, Lst as _Lst, Directory as _Directory, Vec as _Vec, Path as _Path, File as _File, Ptr as _Ptr, Choice as _Choice, TypedArray as _TypedArray, TypedArray_Int32 as _TypedArray_Int32, TypedArray_Float64 as _TypedArray_Float64, Process as _Process, BindProcess as _BindProcess, FileSystem as _FileSystem, Pbr as _Pbr } from 'spinal-core-connectorjs';
 declare const Model: typeof _Model;
